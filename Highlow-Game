@@ -1,0 +1,49 @@
+//This program is based on the logic of the game `/highlow`. 
+import java.util.*;
+import java.io.*;
+public class Highlow
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        //Minimum and maximum range for selecting the hint number and the real number being thought of.
+        int min=0,max=100;
+        //Initializing the variables to store a random number from one to hundred, different numbers for both the number being thought of and the hint number.
+        int basenumber=(int)Math.floor(Math.random()*(max-min+1)+min);
+        int hintnumber=(int)Math.floor(Math.random()*(max-min+1)+min);
+        System.out.println(hintnumber+"\n Enter 'Higher' or 'Lower' to determine whether the hidden number is higher or lower than the given hint number, and 'Jackpot' if you think it's the same number \n");
+        String guess=sc.next();
+        //Initializing some string variables to check if the user's choice matches the function to be performed.
+        String s1="Higher";
+        String s2="Lower";
+        String s3="Jackpot";
+        //When the user selects 'Higher':
+        if(guess.equals(s1))
+        {
+            if(basenumber>hintnumber)
+                System.out.println("You win! The hidden number was: "+basenumber);
+            else
+                System.out.println("You lose! The hidden number was: "+basenumber);
+        }
+        //When the user selects 'Lower':
+        else if(guess.equals(s2))
+        {
+            if(basenumber<hintnumber)
+                System.out.println("You win! The hidden number was: "+basenumber);
+            else
+                System.out.println("You lose! The hidden number was: "+basenumber);
+        }
+        'When the user selects 'Jackpot':
+        else if(guess.equals(s3))
+        {
+            if(basenumber==hintnumber)
+                System.out.println("You win! The hidden number was: "+basenumber);
+            else
+                System.out.println("You lose! The hidden number was: "+basenumber);
+        }
+        //Case where the user does not enter a valid option. This is, of course, not required in applet form.
+        else
+            System.out.println("Something went wrong, please try again.");
+    }
+        
+}
