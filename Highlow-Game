@@ -33,7 +33,7 @@ public class Highlow
             else
                 System.out.println("You lose! The hidden number was: "+basenumber);
         }
-        'When the user selects 'Jackpot':
+        //When the user selects 'Jackpot':
         else if(guess.equals(s3))
         {
             if(basenumber==hintnumber)
